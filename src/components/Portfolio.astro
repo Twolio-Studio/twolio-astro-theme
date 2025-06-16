@@ -1,0 +1,240 @@
+---
+---
+
+<section class="portfolio section" id="portfolio">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>Our Portfolio</h2>
+      <p>Discover our latest projects and see how we've helped businesses achieve their digital goals</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-item fade-in">
+        <div class="portfolio-image">
+          <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800" alt="E-commerce Platform" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <h4>E-commerce Platform</h4>
+              <p>Modern online store with advanced features</p>
+              <div class="portfolio-tags">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item fade-in">
+        <div class="portfolio-image">
+          <img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Corporate Website" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <h4>Corporate Website</h4>
+              <p>Professional business website with CMS</p>
+              <div class="portfolio-tags">
+                <span>Astro</span>
+                <span>Tailwind</span>
+                <span>Strapi</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item fade-in">
+        <div class="portfolio-image">
+          <img src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mobile App Design" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <h4>Mobile App Design</h4>
+              <p>Intuitive mobile app for fitness tracking</p>
+              <div class="portfolio-tags">
+                <span>React Native</span>
+                <span>UI/UX</span>
+                <span>Firebase</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item fade-in">
+        <div class="portfolio-image">
+          <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=800" alt="SaaS Dashboard" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <h4>SaaS Dashboard</h4>
+              <p>Analytics dashboard for data visualization</p>
+              <div class="portfolio-tags">
+                <span>Vue.js</span>
+                <span>D3.js</span>
+                <span>Python</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item fade-in">
+        <div class="portfolio-image">
+          <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Restaurant Website" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <h4>Restaurant Website</h4>
+              <p>Beautiful restaurant site with online ordering</p>
+              <div class="portfolio-tags">
+                <span>WordPress</span>
+                <span>WooCommerce</span>
+                <span>PHP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item fade-in">
+        <div class="portfolio-image">
+          <img src="https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Brand Identity" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <h4>Brand Identity</h4>
+              <p>Complete brand redesign and guidelines</p>
+              <div class="portfolio-tags">
+                <span>Logo Design</span>
+                <span>Branding</span>
+                <span>Print</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio-cta fade-in">
+      <a href="#contact" class="btn btn-primary">Start Your Project</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .portfolio {
+    background: var(--color-gray-50);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-16);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--spacing-4);
+  }
+
+  .section-header p {
+    font-size: 1.125rem;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-8);
+    margin-bottom: var(--spacing-16);
+  }
+
+  .portfolio-item {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .portfolio-item:hover {
+    transform: translateY(-8px);
+  }
+
+  .portfolio-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+  }
+
+  .portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .portfolio-item:hover .portfolio-image img {
+    transform: scale(1.05);
+  }
+
+  .portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(20, 184, 166, 0.9) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: var(--spacing-6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+  }
+
+  .portfolio-info {
+    color: var(--color-white);
+  }
+
+  .portfolio-info h4 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-2);
+    font-size: 1.25rem;
+  }
+
+  .portfolio-info p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .portfolio-tags {
+    display: flex;
+    gap: var(--spacing-2);
+    flex-wrap: wrap;
+  }
+
+  .portfolio-tags span {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--color-white);
+    padding: var(--spacing-1) var(--spacing-3);
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .portfolio-cta {
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .portfolio-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-6);
+    }
+    
+    .portfolio-overlay {
+      opacity: 1;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    }
+  }
+</style>

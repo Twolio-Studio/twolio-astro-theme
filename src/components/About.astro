@@ -1,0 +1,330 @@
+---
+---
+
+<section class="about section" id="about">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text fade-in">
+        <h2>About Creative Studio</h2>
+        <p class="about-intro">
+          We are a passionate team of designers, developers, and digital strategists dedicated to 
+          creating exceptional digital experiences that drive real business results.
+        </p>
+        <p>
+          Founded in 2019, Creative Studio has grown from a small startup to a trusted partner 
+          for businesses of all sizes. Our diverse team brings together expertise in web development, 
+          UI/UX design, digital marketing, and brand strategy.
+        </p>
+        <p>
+          We believe that great design is not just about aesthetics—it's about solving problems, 
+          enhancing user experiences, and helping businesses achieve their goals. Every project 
+          we take on is an opportunity to push creative boundaries and deliver outstanding results.
+        </p>
+        
+        <div class="about-values">
+          <div class="value">
+            <h4>🎯 Results-Driven</h4>
+            <p>Every project is designed to achieve measurable business outcomes</p>
+          </div>
+          <div class="value">
+            <h4>⚡ Innovation First</h4>
+            <p>We stay ahead of trends and use cutting-edge technologies</p>
+          </div>
+          <div class="value">
+            <h4>🤝 Client Partnership</h4>
+            <p>We work closely with clients as partners, not just service providers</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-visual fade-in">
+        <div class="team-photo">
+          <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Creative Studio Team" />
+        </div>
+        <div class="stats-cards">
+          <div class="stat-card">
+            <span class="stat-number" data-target="150">0</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="50">0</span>
+            <span class="stat-label">Happy Clients</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="5">0</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="100">0</span>
+            <span class="stat-label">Client Satisfaction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-section fade-in">
+      <h3>Meet Our Team</h3>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="member-photo">
+            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400" alt="John Doe" />
+          </div>
+          <h4>John Doe</h4>
+          <p class="member-role">Creative Director</p>
+          <p class="member-bio">Leading our design vision with 8+ years of experience in digital design and brand strategy.</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="member-photo">
+            <img src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400" alt="John Doe" />
+          </div>
+          <h4>John Doe</h4>
+          <p class="member-role">Lead Developer</p>
+          <p class="member-bio">Full-stack developer with expertise in modern web technologies and scalable architectures.</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="member-photo">
+            <img src="https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg?auto=compress&cs=tinysrgb&w=400" alt="John Doe" />
+          </div>
+          <h4>John Doe</h4>
+          <p class="member-role">UX Designer</p>
+          <p class="member-bio">UX specialist focused on creating intuitive, user-centered designs that drive engagement.</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="member-photo">
+            <img src="https://images.pexels.com/photos/3760514/pexels-photo-3760514.jpeg?auto=compress&cs=tinysrgb&w=400" alt="John Doe" />
+          </div>
+          <h4>John Doe</h4>
+          <p class="member-role">Marketing Strategist</p>
+          <p class="member-bio">Digital marketing expert helping clients achieve growth through strategic online campaigns.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background: var(--color-white);
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-16);
+    align-items: center;
+    margin-bottom: var(--spacing-20);
+  }
+
+  .about-text h2 {
+    margin-bottom: var(--spacing-6);
+  }
+
+  .about-intro {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-gray-700);
+    margin-bottom: var(--spacing-6);
+  }
+
+  .about-text p {
+    margin-bottom: var(--spacing-4);
+    line-height: 1.7;
+  }
+
+  .about-values {
+    margin-top: var(--spacing-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+  }
+
+  .value h4 {
+    margin-bottom: var(--spacing-2);
+    color: var(--color-gray-900);
+    font-size: 1.125rem;
+  }
+
+  .value p {
+    margin: 0;
+    color: var(--color-gray-600);
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .team-photo {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+  }
+
+  .team-photo img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .stats-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-4);
+    margin-top: var(--spacing-6);
+  }
+
+  .stat-card {
+    background: var(--color-white);
+    padding: var(--spacing-4);
+    border-radius: 0.75rem;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-gray-200);
+  }
+
+  .stat-card .stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-1);
+  }
+
+  .stat-card .stat-label {
+    font-size: 0.875rem;
+    color: var(--color-gray-600);
+    font-weight: 500;
+  }
+
+  .team-section {
+    text-align: center;
+  }
+
+  .team-section h3 {
+    margin-bottom: var(--spacing-12);
+    font-size: 2rem;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-8);
+  }
+
+  .team-member {
+    text-align: center;
+  }
+
+  .member-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto var(--spacing-4);
+    border: 4px solid var(--color-gray-200);
+  }
+
+  .member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .team-member h4 {
+    margin-bottom: var(--spacing-1);
+    color: var(--color-gray-900);
+  }
+
+  .member-role {
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-3);
+  }
+
+  .member-bio {
+    color: var(--color-gray-600);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-12);
+    }
+
+    .about-visual {
+      order: -1;
+    }
+
+    .stats-cards {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-3);
+    }
+
+    .team-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-6);
+    }
+
+    .about-values {
+      gap: var(--spacing-4);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    let hasAnimated = false;
+
+    const animateCounter = (element: Element, target: number, duration: number = 2000) => {
+      let start = 0;
+      const increment = target / (duration / 16); // 60fps
+      
+      const updateCounter = () => {
+        start += increment;
+        if (start < target) {
+          element.textContent = Math.floor(start).toString();
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = target.toString();
+        }
+      };
+      
+      updateCounter();
+    };
+
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasAnimated) {
+          hasAnimated = true;
+          
+          statNumbers.forEach((stat) => {
+            const target = parseInt(stat.getAttribute('data-target') || '0');
+            const duration = 2000 + Math.random() * 500; // Slight variation in timing
+            
+            // Add a small delay for staggered effect
+            const delay = Array.from(statNumbers).indexOf(stat) * 200;
+            
+            setTimeout(() => {
+              animateCounter(stat, target, duration);
+            }, delay);
+          });
+        }
+      });
+    }, observerOptions);
+
+    // Observe the about stats section
+    const aboutStats = document.querySelector('.about-visual');
+    if (aboutStats) {
+      observer.observe(aboutStats);
+    }
+  });
+</script>

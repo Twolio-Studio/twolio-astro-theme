@@ -1,0 +1,462 @@
+---
+---
+
+<section class="hero section" id="home">
+  <div class="hero-background">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+  </div>
+  
+  <div class="container">
+    <div class="hero-content fade-in">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="badge-icon">✨</span>
+          <span>Award-Winning Digital Agency</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Astro.js <span class="gradient-text animated-gradient">theme</span> 
+          <br>for creative agency websites.
+        </h1>
+        
+        <p class="hero-description">
+          Transform your brand with cutting-edge web design, development, and digital marketing. 
+          We turn your vision into powerful digital solutions that drive results and captivate audiences.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn btn-primary btn-glow">
+            <span>View Our Work</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7 7H17V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#services" class="btn btn-secondary btn-glass">
+            <span>Our Services</span>
+          </a>
+        </div>
+        
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number-container">
+              <span class="stat-number" data-target="150">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <span class="stat-label">Projects Delivered</span>
+          </div>
+          <div class="stat">
+            <div class="stat-number-container">
+              <span class="stat-number" data-target="50">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <span class="stat-label">Happy Clients</span>
+          </div>
+          <div class="stat">
+            <div class="stat-number-container">
+              <span class="stat-number" data-target="5">0</span>
+              <span class="stat-suffix"></span>
+            </div>
+            <span class="stat-label">Years Experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: var(--spacing-8) 0;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  }
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+  .gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.7;
+    animation: float 20s ease-in-out infinite;
+  }
+
+  .orb-1 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+    top: -200px;
+    right: -200px;
+    animation-delay: 0s;
+  }
+
+  .orb-2 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #14B8A6 0%, #06B6D4 100%);
+    bottom: -150px;
+    left: -150px;
+    animation-delay: -7s;
+  }
+
+  .orb-3 {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(135deg, #F97316 0%, #EF4444 100%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: -14s;
+  }
+
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 800px;
+    color: var(--color-white);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-6);
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  .badge-icon {
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  .hero-title {
+    margin-bottom: var(--spacing-6);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-white);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 25%, #14B8A6 50%, #06B6D4 75%, #F97316 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease-in-out infinite;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-8);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-12);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-glow {
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+    box-shadow: 
+      0 4px 15px rgba(99, 102, 241, 0.4),
+      0 0 30px rgba(99, 102, 241, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-glow:hover::before {
+    left: 100%;
+  }
+
+  .btn-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 8px 25px rgba(99, 102, 241, 0.5),
+      0 0 40px rgba(99, 102, 241, 0.3);
+  }
+
+  .btn-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-white);
+  }
+
+  .btn-glass:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    color: var(--color-white);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: var(--spacing-8);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 100px;
+    position: relative;
+  }
+
+  .stat-number-container {
+    display: flex;
+    align-items: baseline;
+    line-height: 1;
+    margin-bottom: var(--spacing-1);
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #14B8A6;
+    line-height: 1;
+    text-shadow: 0 0 20px rgba(20, 184, 166, 0.5);
+  }
+
+  .stat-suffix {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #14B8A6;
+    line-height: 1;
+    margin-left: 2px;
+    text-shadow: 0 0 20px rgba(20, 184, 166, 0.5);
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-15px) rotate(1deg);
+    }
+    50% {
+      transform: translateY(-25px) rotate(0deg);
+    }
+    75% {
+      transform: translateY(-10px) rotate(-1deg);
+    }
+  }
+
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  @keyframes sparkle {
+    0%, 100% {
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.2) rotate(180deg);
+    }
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 90vh;
+      padding: var(--spacing-6) 0;
+    }
+
+    .hero-text {
+      max-width: 100%;
+    }
+
+    .hero-actions {
+      gap: var(--spacing-3);
+    }
+
+    .hero-actions .btn {
+      flex: 1;
+      min-width: 140px;
+      max-width: 200px;
+    }
+
+    .hero-stats {
+      gap: var(--spacing-6);
+    }
+
+    .stat {
+      min-width: 80px;
+    }
+
+    .orb-1, .orb-2, .orb-3 {
+      opacity: 0.3;
+    }
+
+    .hero-title {
+      font-size: clamp(1.75rem, 6vw, 2.25rem);
+      margin-bottom: var(--spacing-4);
+    }
+
+    .hero-description {
+      font-size: 1rem;
+      margin-bottom: var(--spacing-6);
+    }
+  }
+
+  /* Small Mobile Styles */
+  @media (max-width: 480px) {
+    .hero {
+      padding: var(--spacing-4) 0;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing-3);
+    }
+
+    .hero-actions .btn {
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .hero-stats {
+      gap: var(--spacing-4);
+    }
+
+    .stat-number {
+      font-size: 1.5rem;
+    }
+
+    .stat-suffix {
+      font-size: 1.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    let hasAnimated = false;
+
+    const animateCounter = (element: Element, target: number, duration: number = 2000) => {
+      let start = 0;
+      const increment = target / (duration / 16); // 60fps
+      
+      const updateCounter = () => {
+        start += increment;
+        if (start < target) {
+          element.textContent = Math.floor(start).toString();
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = target.toString();
+        }
+      };
+      
+      updateCounter();
+    };
+
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasAnimated) {
+          hasAnimated = true;
+          
+          statNumbers.forEach((stat) => {
+            const target = parseInt(stat.getAttribute('data-target') || '0');
+            const duration = 2000 + Math.random() * 500; // Slight variation in timing
+            
+            // Add a small delay for staggered effect
+            const delay = Array.from(statNumbers).indexOf(stat) * 200;
+            
+            setTimeout(() => {
+              animateCounter(stat, target, duration);
+            }, delay);
+          });
+        }
+      });
+    }, observerOptions);
+
+    // Observe the hero stats section
+    const heroStats = document.querySelector('.hero-stats');
+    if (heroStats) {
+      observer.observe(heroStats);
+    }
+  });
+</script>
