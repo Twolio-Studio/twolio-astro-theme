@@ -1,4 +1,63 @@
 ---
+// Define the project data or accept it as a prop
+export interface Project {
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+  tags: string[];
+}
+
+export interface Props {
+  projects?: Project[];
+}
+
+const {
+  projects = [
+    {
+      title: "E-commerce Platform",
+      description: "Modern online store with advanced features",
+      image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
+      alt: "E-commerce Platform",
+      tags: ["React", "Node.js", "MongoDB"]
+    },
+    {
+      title: "Corporate Website",
+      description: "Professional business website with CMS",
+      image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800",
+      alt: "Corporate Website",
+      tags: ["Astro", "Tailwind", "Strapi"]
+    },
+    {
+      title: "Mobile App Design",
+      description: "Intuitive mobile app for fitness tracking",
+      image: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800",
+      alt: "Mobile App Design",
+      tags: ["React Native", "UI/UX", "Firebase"]
+    },
+    {
+      title: "SaaS Dashboard",
+      description: "Analytics dashboard for data visualization",
+      image: "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=800",
+      alt: "SaaS Dashboard",
+      tags: ["Vue.js", "D3.js", "Python"]
+    },
+    {
+      title: "Restaurant Website",
+      description: "Beautiful restaurant site with online ordering",
+      image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
+      alt: "Restaurant Website",
+      tags: ["WordPress", "WooCommerce", "PHP"]
+    },
+    {
+      title: "Brand Identity",
+      description: "Complete brand redesign and guidelines",
+      image: "https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&w=800",
+      alt: "Brand Identity",
+      tags: ["Logo Design", "Branding", "Print"]
+    }
+  ]
+} = Astro.props;
 ---
 
 <section class="portfolio section" id="portfolio">
@@ -9,107 +68,24 @@
     </div>
 
     <div class="portfolio-grid">
-      <div class="portfolio-item fade-in">
-        <div class="portfolio-image">
-          <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800" alt="E-commerce Platform" />
-          <div class="portfolio-overlay">
-            <div class="portfolio-info">
-              <h4>E-commerce Platform</h4>
-              <p>Modern online store with advanced features</p>
-              <div class="portfolio-tags">
-                <span>React</span>
-                <span>Node.js</span>
-                <span>MongoDB</span>
+      {projects.map(project => (
+        <div class="portfolio-item fade-in">
+          <div class="portfolio-image">
+            <img src={project.image} alt={project.alt} />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h4>{project.title}</h4>
+                <p>{project.description}</p>
+                <div class="portfolio-tags">
+                  {project.tags.map(tag => (
+                    <span>{tag}</span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="portfolio-item fade-in">
-        <div class="portfolio-image">
-          <img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Corporate Website" />
-          <div class="portfolio-overlay">
-            <div class="portfolio-info">
-              <h4>Corporate Website</h4>
-              <p>Professional business website with CMS</p>
-              <div class="portfolio-tags">
-                <span>Astro</span>
-                <span>Tailwind</span>
-                <span>Strapi</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="portfolio-item fade-in">
-        <div class="portfolio-image">
-          <img src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mobile App Design" />
-          <div class="portfolio-overlay">
-            <div class="portfolio-info">
-              <h4>Mobile App Design</h4>
-              <p>Intuitive mobile app for fitness tracking</p>
-              <div class="portfolio-tags">
-                <span>React Native</span>
-                <span>UI/UX</span>
-                <span>Firebase</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="portfolio-item fade-in">
-        <div class="portfolio-image">
-          <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=800" alt="SaaS Dashboard" />
-          <div class="portfolio-overlay">
-            <div class="portfolio-info">
-              <h4>SaaS Dashboard</h4>
-              <p>Analytics dashboard for data visualization</p>
-              <div class="portfolio-tags">
-                <span>Vue.js</span>
-                <span>D3.js</span>
-                <span>Python</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="portfolio-item fade-in">
-        <div class="portfolio-image">
-          <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Restaurant Website" />
-          <div class="portfolio-overlay">
-            <div class="portfolio-info">
-              <h4>Restaurant Website</h4>
-              <p>Beautiful restaurant site with online ordering</p>
-              <div class="portfolio-tags">
-                <span>WordPress</span>
-                <span>WooCommerce</span>
-                <span>PHP</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="portfolio-item fade-in">
-        <div class="portfolio-image">
-          <img src="https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Brand Identity" />
-          <div class="portfolio-overlay">
-            <div class="portfolio-info">
-              <h4>Brand Identity</h4>
-              <p>Complete brand redesign and guidelines</p>
-              <div class="portfolio-tags">
-                <span>Logo Design</span>
-                <span>Branding</span>
-                <span>Print</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
 
     <div class="portfolio-cta fade-in">
