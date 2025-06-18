@@ -307,12 +307,13 @@
           hasAnimated = true;
           
           statNumbers.forEach((stat) => {
+            stat.textContent = '0'; // Reset to 0 before animating
+
             const target = parseInt(stat.getAttribute('data-target') || '0');
-            const duration = 2000 + Math.random() * 500; // Slight variation in timing
-            
-            // Add a small delay for staggered effect
+            const duration = 2000 + Math.random() * 500;
+
             const delay = Array.from(statNumbers).indexOf(stat) * 200;
-            
+
             setTimeout(() => {
               animateCounter(stat, target, duration);
             }, delay);
