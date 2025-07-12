@@ -4,9 +4,10 @@ import type { ImageMetadata } from 'astro:assets';
 export interface Project {
   title: string;
   description: string;
-  image: ImageMetadata; 
+  image: ImageMetadata;
   alt: string;
   tags: string[];
+  info: string;
 }
 
 export interface Props {
@@ -22,67 +23,68 @@ import image6 from '../images/brand.webp';
 
 const {
   projects = [
-    {
-      title: 'E‑commerce Platform',
-      description: 'Modern online store with advanced features',
-      image: image1,
-      alt: 'E‑commerce Platform',
-      tags: ['React', 'Node.js', 'MongoDB'],
-    },
-    {
-      title: 'Corporate Website',
-      description: 'Professional business website with CMS',
-      image: image2,
-      alt: 'Corporate Website',
-      tags: ['Astro', 'Tailwind', 'Strapi'],
-    },
-    {
-      title: 'Mobile App Design',
-      description: 'Intuitive mobile app for fitness tracking',
-      image: image3,
-      alt: 'Mobile App Design',
-      tags: ['React Native', 'UI/UX', 'Firebase'],
-    },
-    {
-      title: 'SaaS Dashboard',
-      description: 'Analytics dashboard for data visualization',
-      image: image4,
-      alt: 'SaaS Dashboard',
-      tags: ['Vue.js', 'D3.js', 'Python'],
-    },
-    {
-      title: 'Restaurant Website',
-      description: 'Beautiful restaurant site with online ordering',
-      image: image5,
-      alt: 'Restaurant Website',
-      tags: ['WordPress', 'WooCommerce', 'PHP'],
-    },
-    {
-      title: 'Brand Identity',
-      description: 'Complete brand redesign and guidelines',
-      image: image6,
-      alt: 'Brand Identity',
-      tags: ['Logo Design', 'Branding', 'Print'],
-    },
-  ],
+  {
+    title: 'E‑commerce Platform',
+    description: 'Modern online store with advanced features',
+    image: image1,
+    alt: 'E‑commerce Platform',
+    tags: ['React', 'Node.js', 'MongoDB'],
+    info: 'A feature-rich e-commerce platform with secure checkout, real-time inventory management, customer accounts, and admin analytics dashboard.'
+  },
+  {
+    title: 'Corporate Website',
+    description: 'Professional business website with CMS',
+    image: image2,
+    alt: 'Corporate Website',
+    tags: ['Astro', 'Tailwind', 'Strapi'],
+    info: 'Built with Astro and Strapi CMS, this corporate site allows marketing teams to manage content easily while maintaining a sleek, professional design.'
+  },
+  {
+    title: 'Mobile App Design',
+    description: 'Intuitive mobile app for fitness tracking',
+    image: image3,
+    alt: 'Mobile App Design',
+    tags: ['React Native', 'UI/UX', 'Firebase'],
+    info: 'Designed for both Android and iOS, this mobile app helps users track workouts, set goals, and sync data in real time with Firebase.'
+  },
+  {
+    title: 'SaaS Dashboard',
+    description: 'Analytics dashboard for data visualization',
+    image: image4,
+    alt: 'SaaS Dashboard',
+    tags: ['Vue.js', 'D3.js', 'Python'],
+    info: 'An advanced SaaS dashboard with dynamic charts using D3.js and back-end integration with Python APIs for real-time business insights.'
+  },
+  {
+    title: 'Restaurant Website',
+    description: 'Beautiful restaurant site with online ordering',
+    image: image5,
+    alt: 'Restaurant Website',
+    tags: ['WordPress', 'WooCommerce', 'PHP'],
+    info: 'Responsive restaurant site with full menu display, online reservations, and WooCommerce integration for online food ordering.'
+  },
+  {
+    title: 'Brand Identity',
+    description: 'Complete brand redesign and guidelines',
+    image: image6,
+    alt: 'Brand Identity',
+    tags: ['Logo Design', 'Branding', 'Print'],
+    info: 'A full branding project including logo design, color palette, typography, print materials, and brand guidelines for consistent use.'
+  },
+]
+,
 } = Astro.props;
 ---
-
 <section class="portfolio section" id="portfolio">
   <div class="container">
-    <!-- ───── Section header ───── -->
     <div class="section-header fade-in">
       <h2>Our Portfolio</h2>
-      <p>
-        Discover our latest projects and see how we’ve helped businesses achieve their
-        digital goals
-      </p>
+      <p>Discover our latest projects and see how we’ve helped businesses achieve their digital goals</p>
     </div>
 
-    <!-- ───── Grid ───── -->
     <div class="portfolio-grid">
-      {projects.map((project) => (
-        <div class="portfolio-item fade-in">
+      {projects.map((project, index) => (
+        <div class="portfolio-item fade-in" data-index={index}>
           <div class="portfolio-image">
             <img
               src={project.image.src}
@@ -107,12 +109,66 @@ const {
       ))}
     </div>
 
-    <!-- ───── CTA ───── -->
     <div class="portfolio-cta fade-in">
       <a href="#contact" class="btn btn-primary">Start Your Project</a>
     </div>
   </div>
+
+  {projects.map((project, index) => (
+    <div class="modal" id={`modal-${index}`}>
+      <div class="modal-content">
+        <button class="modal-close">×</button>
+        <h3>{project.title}</h3>
+        <img
+          src={project.image.src}
+          width={project.image.width}
+          height={project.image.height}
+          alt={project.alt}
+        />
+        <p>{project.description}</p>
+        <p>{project.info}</p>
+        <div class="portfolio-tags">
+          {project.tags.map((tag) => (
+            <span>{tag}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  ))}
 </section>
+
+<!-- ✅ JavaScript: client-side modal logic -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.portfolio-item');
+    const modals = document.querySelectorAll('.modal');
+    const closeButtons = document.querySelectorAll('.modal-close');
+
+    items.forEach((item) => {
+      item.addEventListener('click', () => {
+        const index = item.getAttribute('data-index');
+        const modal = document.getElementById(`modal-${index}`);
+        if (modal) modal.classList.add('show');
+      });
+    });
+
+    closeButtons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const modal = btn.closest('.modal');
+        if (modal) modal.classList.remove('show');
+      });
+    });
+
+    modals.forEach((modal) => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('show');
+        }
+      });
+    });
+  });
+</script>
 
 <style>
   .portfolio {
@@ -146,6 +202,7 @@ const {
     overflow: hidden;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    cursor: pointer;
   }
 
   .portfolio-item:hover {
@@ -228,10 +285,120 @@ const {
       gap: var(--spacing-6);
     }
 
-    /* On mobile keep overlay visible for readability */
     .portfolio-overlay {
       opacity: 1;
       background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
     }
   }
+
+  /* ───── Modal ───── */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    transition: opacity 0.3s ease;
+  }
+
+  .modal.show {
+    display: flex;
+  }
+
+  .modal-content {
+    background: linear-gradient(
+      135deg,
+      rgba(99, 102, 241, 0.9) 0%,
+      rgba(20, 184, 166, 0.9) 100%
+    );
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+    text-align: left;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-content h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: white;
+  }
+
+  .modal-content p {
+    font-size: 1rem;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-content .modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .modal-content .modal-tags span {
+    background-color: #f3f4f6;
+    color: #111827;
+    padding: 0.4rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .modal-close:hover {
+    color: #111827;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .modal-content {
+      padding: 1.25rem;
+    }
+
+    .modal-content h3 {
+      font-size: 1.25rem;
+    }
+  }
 </style>
+
